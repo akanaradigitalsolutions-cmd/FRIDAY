@@ -1,0 +1,31 @@
+[project]
+name = "obsidian-copilot"
+version = "0.1.0"
+description = "AI daily-operations assistant: Gmail triage, Google Calendar, Google Meet/Zoom meetings, reports — all landing in your Obsidian vault, powered by Claude."
+requires-python = ">=3.10"
+readme = "README.md"
+dependencies = [
+    "mcp>=1.2.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.7.0",
+]
+
+[project.optional-dependencies]
+google = [
+    "google-api-python-client>=2.100.0",
+    "google-auth>=2.23.0",
+    "google-auth-oauthlib>=1.1.0",
+]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+obsidian-copilot = "obsidian_copilot.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["obsidian_copilot*"]

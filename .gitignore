@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Env & secrets — NEVER commit these
+.env
+google_credentials.json
+google_token.json
+*token*.json
+
+# Local assistant state
+.obsidian-copilot/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
