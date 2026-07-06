@@ -1,4 +1,4 @@
-"""Obsidian Copilot — an AI daily-operations assistant.
+"""FRIDAY — an AI daily-operations assistant.
 
 Reads Gmail and flags urgent mail, manages Google Calendar, arranges Google
 Meet / Zoom meetings, generates reports, and writes everything into your

@@ -18,7 +18,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from obsidian_copilot.core.config import settings
+from friday.core.config import settings
 
 _TOKEN_URL = "https://zoom.us/oauth/token"
 _API_BASE = "https://api.zoom.us/v2"

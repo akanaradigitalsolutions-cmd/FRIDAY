@@ -13,7 +13,7 @@ import json
 from datetime import datetime, timezone
 from typing import Any
 
-from obsidian_copilot.core.config import settings
+from friday.core.config import settings
 
 
 class SessionMemory:

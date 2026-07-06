@@ -8,7 +8,7 @@ pay-per-token API billing.
 
 Claude Code also runs its own internal agentic tool-use loop, so we don't
 reimplement a tool-dispatch loop here — we hand it a whitelisted set of MCP
-tools (our skills, served by obsidian_copilot/mcp_server.py) via
+tools (our skills, served by friday/mcp_server.py) via
 --mcp-config, and a single `claude -p` call resolves everything, including
 any multi-step tool use.
 """
@@ -22,11 +22,11 @@ import subprocess
 import sys
 from typing import Any
 
-from obsidian_copilot.core.config import settings
-from obsidian_copilot.skills import base as skills
+from friday.core.config import settings
+from friday.skills import base as skills
 
-MCP_SERVER_MODULE = "obsidian_copilot.mcp_server"
-MCP_SERVER_NAME = "copilot"
+MCP_SERVER_MODULE = "friday.mcp_server"
+MCP_SERVER_NAME = "friday"
 
 # Built-in Claude Code tools we explicitly deny so the assistant can only
 # touch the machine through our own skills. NOTE: deny by name here rather

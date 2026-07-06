@@ -10,8 +10,8 @@ Setup (one time):
      the Google Calendar API.
   2. Create an OAuth client ID of type "Desktop app" and download the JSON.
   3. Save it as the path in GOOGLE_CREDENTIALS_FILE (default
-     ~/.obsidian-copilot/google_credentials.json).
-  4. Run:  python -m obsidian_copilot.integrations.google_auth
+     ~/.friday/google_credentials.json).
+  4. Run:  python -m friday.integrations.google_auth
      to complete consent and cache the token.
 
 The google-api-python-client / google-auth libraries are an optional extra
@@ -24,7 +24,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from obsidian_copilot.core.config import settings
+from friday.core.config import settings
 
 # Read/modify mail, and full calendar access (needed to create events with
 # Meet links). Gmail "modify" lets us mark things read / add labels later;
@@ -74,7 +74,7 @@ def get_credentials(interactive: bool = False):
     if not interactive:
         raise GoogleAuthError(
             "Google isn't authorized yet. Run: "
-            "python -m obsidian_copilot.integrations.google_auth"
+            "python -m friday.integrations.google_auth"
         )
 
     cred_path = Path(settings.google_credentials_file)

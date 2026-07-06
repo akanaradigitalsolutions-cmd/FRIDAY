@@ -15,7 +15,7 @@ google_token.json
 *token*.json
 
 # Local assistant state
-.obsidian-copilot/
+.friday/
 
 # OS / editor
 .DS_Store

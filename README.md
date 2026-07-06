@@ -1,4 +1,4 @@
-# Obsidian Copilot
+# FRIDAY
 
 An AI assistant that runs your **daily operations** and files everything into
 your **Obsidian** vault — powered by **Claude**.
@@ -39,7 +39,7 @@ npm install -g @anthropic-ai/claude-code
 claude login
 ```
 
-### 2. Install Obsidian Copilot
+### 2. Install FRIDAY
 ```bash
 python -m venv .venv
 source .venv/bin/activate           # Windows: .venv\Scripts\activate
@@ -50,19 +50,19 @@ pip install -e ".[google]"          # include Google APIs (Gmail/Calendar/Meet)
 ```bash
 cp .env.example .env
 ```
-Set at least `OBSIDIAN_VAULT` (path to your vault) and `OC_TIMEZONE`. Fill in
+Set at least `OBSIDIAN_VAULT` (path to your vault) and `FRIDAY_TIMEZONE`. Fill in
 Google/Zoom credentials when you're ready for those (see `.env.example` for the
 step-by-step).
 
 ### 4. Authorize Google (one time)
 ```bash
-obsidian-copilot auth-google        # opens a browser for consent, caches a token
+friday auth-google        # opens a browser for consent, caches a token
 ```
 
 ### 5. Run
 ```bash
-obsidian-copilot                    # interactive chat
-obsidian-copilot brief              # run the morning briefing once
+friday                    # interactive chat
+friday brief              # run the morning briefing once
 ```
 
 Try:
@@ -75,7 +75,7 @@ Try:
 ### Schedule the morning briefing
 Add a cron entry (macOS/Linux) to run it automatically on weekday mornings:
 ```cron
-0 7 * * 1-5  /full/path/to/.venv/bin/obsidian-copilot brief
+0 7 * * 1-5  /full/path/to/.venv/bin/friday brief
 ```
 Because the vault is written directly, the note appears whether or not Obsidian
 is open — it shows up the moment you open the app.

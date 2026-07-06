@@ -6,16 +6,16 @@ Daily Note into the Obsidian vault. Because it's a normal orchestrator call,
 Claude decides which tools to use and in what order.
 
 Run it on demand:
-    obsidian-copilot brief
+    friday brief
 Or on a schedule (cron / launchd / Task Scheduler), e.g. every weekday 7am:
-    0 7 * * 1-5  /path/to/venv/bin/obsidian-copilot brief
+    0 7 * * 1-5  /path/to/venv/bin/friday brief
 """
 
 from __future__ import annotations
 
 from datetime import datetime
 
-from obsidian_copilot.core.orchestrator import Orchestrator
+from friday.core.orchestrator import Orchestrator
 
 BRIEFING_INSTRUCTION = """Produce my morning briefing for {today} and write it into today's \
 Obsidian daily note. Steps:

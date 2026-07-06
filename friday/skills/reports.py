@@ -10,8 +10,8 @@ from __future__ import annotations
 
 from datetime import datetime
 
-from obsidian_copilot.skills.base import skill
-from obsidian_copilot.skills.obsidian import write_note
+from friday.skills.base import skill
+from friday.skills.obsidian import write_note
 
 _REPORTS_DIR = "Reports"
 

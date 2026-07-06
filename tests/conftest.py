@@ -10,7 +10,7 @@ import pytest
 
 @pytest.fixture()
 def temp_vault(tmp_path, monkeypatch):
-    from obsidian_copilot.core import config
+    from friday.core import config
 
     vault = tmp_path / "vault"
     vault.mkdir()
@@ -31,6 +31,6 @@ def temp_vault(tmp_path, monkeypatch):
     )
     monkeypatch.setattr(config, "settings", test_settings)
 
-    import obsidian_copilot.skills.obsidian as obsidian
+    import friday.skills.obsidian as obsidian
 
     return vault, obsidian

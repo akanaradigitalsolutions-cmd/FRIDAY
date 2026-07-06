@@ -1,5 +1,5 @@
 [project]
-name = "obsidian-copilot"
+name = "friday"
 version = "0.1.0"
 description = "AI daily-operations assistant: Gmail triage, Google Calendar, Google Meet/Zoom meetings, reports — all landing in your Obsidian vault, powered by Claude."
 requires-python = ">=3.10"
@@ -21,11 +21,11 @@ dev = [
 ]
 
 [project.scripts]
-obsidian-copilot = "obsidian_copilot.main:main"
+friday = "friday.main:main"
 
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["obsidian_copilot*"]
+include = ["friday*"]

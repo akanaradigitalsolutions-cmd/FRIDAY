@@ -1,4 +1,4 @@
-# Obsidian Copilot — Architecture & Roadmap
+# FRIDAY — Architecture & Roadmap
 
 An AI assistant for daily operations — email triage, schedule management,
 meeting arrangement, reporting — with your Obsidian vault as the hub and Claude
@@ -25,12 +25,12 @@ can read the calendar, fetch email, and write the Daily Note in one shot.
 
 Every call (see `ClaudeCLIClient.build_args`):
 - `--mcp-config` / `--strict-mcp-config` — points Claude Code at
-  `obsidian_copilot/mcp_server.py` as the only MCP server.
-- `--allowedTools mcp__copilot__<skill>,…` — whitelists just our skills.
+  `friday/mcp_server.py` as the only MCP server.
+- `--allowedTools mcp__friday__<skill>,…` — whitelists just our skills.
 - `--disallowedTools Bash,Read,Write,…` — denies Claude Code's built-in tools
   by name, so it can only touch the machine through our skills.
 - `--permission-mode dontAsk` — headless, no human to click "allow".
-- `--system-prompt` — the Obsidian Copilot persona (see `orchestrator.py`).
+- `--system-prompt` — the FRIDAY persona (see `orchestrator.py`).
 - `--resume <session_id>` — Claude Code's own session store holds context
   between turns; the id is persisted by `SessionMemory`.
 
@@ -56,7 +56,7 @@ Every frontend (interactive chat, the `brief` job) just feeds text into the same
 ## Repo layout
 
 ```
-obsidian_copilot/
+friday/
   core/
     config.py         # env vars, vault path, credential paths, timezone
     llm.py             # ClaudeCLIClient: shells out to `claude -p` headlessly
@@ -73,7 +73,7 @@ obsidian_copilot/
     google_auth.py      # shared Google OAuth (Gmail + Calendar) + `auth-google`
     zoom_auth.py        # Zoom Server-to-Server OAuth (stdlib only)
   mcp_server.py         # MCP stdio server exposing the skill registry
-  briefing.py           # the morning-briefing routine (obsidian-copilot brief)
+  briefing.py           # the morning-briefing routine (friday brief)
   cli.py                # interactive terminal chat
   main.py               # entry point: chat / brief / auth-google
 ```

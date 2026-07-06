@@ -24,7 +24,7 @@ def _resolve_vault() -> Path:
 
 
 def _resolve_home() -> Path:
-    path = Path.home() / ".obsidian-copilot"
+    path = Path.home() / ".friday"
     path.mkdir(parents=True, exist_ok=True)
     return path
 
@@ -58,12 +58,12 @@ class Settings:
 def load_settings() -> Settings:
     home = _resolve_home()
     return Settings(
-        claude_bin=os.getenv("OC_CLAUDE_BIN", "claude"),
-        model=os.getenv("OC_MODEL", "claude-sonnet-5"),
+        claude_bin=os.getenv("FRIDAY_CLAUDE_BIN", "claude"),
+        model=os.getenv("FRIDAY_MODEL", "claude-sonnet-5"),
         vault=_resolve_vault(),
         home=home,
         daily_notes_dir=os.getenv("OBSIDIAN_DAILY_NOTES_DIR", "Daily").strip(),
-        timezone=os.getenv("OC_TIMEZONE", "UTC").strip() or "UTC",
+        timezone=os.getenv("FRIDAY_TIMEZONE", "UTC").strip() or "UTC",
         google_credentials_file=os.getenv(
             "GOOGLE_CREDENTIALS_FILE", str(home / "google_credentials.json")
         ).strip(),

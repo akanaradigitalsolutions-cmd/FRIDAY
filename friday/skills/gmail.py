@@ -14,8 +14,8 @@ from __future__ import annotations
 import base64
 from typing import Any
 
-from obsidian_copilot.integrations.google_auth import GoogleAuthError, gmail_service
-from obsidian_copilot.skills.base import skill
+from friday.integrations.google_auth import GoogleAuthError, gmail_service
+from friday.skills.base import skill
 
 
 def _header(payload: dict, name: str) -> str:

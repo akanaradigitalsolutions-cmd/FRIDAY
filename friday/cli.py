@@ -1,16 +1,16 @@
 """Terminal chat client. Always works, no extra setup beyond the `claude` CLI.
 
-    obsidian-copilot            # start an interactive chat
-    obsidian-copilot brief      # run the morning briefing once and exit
+    friday            # start an interactive chat
+    friday brief      # run the morning briefing once and exit
 """
 
 from __future__ import annotations
 
-from obsidian_copilot.core.config import settings
-from obsidian_copilot.core.memory import SessionMemory
-from obsidian_copilot.core.orchestrator import Orchestrator
+from friday.core.config import settings
+from friday.core.memory import SessionMemory
+from friday.core.orchestrator import Orchestrator
 
-_BANNER = f"""Obsidian Copilot — your daily-ops assistant.
+_BANNER = f"""FRIDAY — your daily-ops assistant.
 Vault: {settings.vault}
 Type your request, or 'exit' to quit. Try:
   - "Give me my morning briefing"
@@ -37,9 +37,9 @@ def run_chat() -> None:
         try:
             reply = orch.handle_message(user)
         except Exception as exc:  # noqa: BLE001 - keep the REPL alive on errors
-            print(f"copilot › (error) {exc}\n")
+            print(f"friday › (error) {exc}\n")
             continue
-        print(f"copilot › {reply}\n")
+        print(f"friday › {reply}\n")
 
 
 def main() -> None:

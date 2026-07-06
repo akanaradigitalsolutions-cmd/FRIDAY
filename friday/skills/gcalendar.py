@@ -9,9 +9,9 @@ from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
 
-from obsidian_copilot.core.config import settings
-from obsidian_copilot.integrations.google_auth import GoogleAuthError, calendar_service
-from obsidian_copilot.skills.base import skill
+from friday.core.config import settings
+from friday.integrations.google_auth import GoogleAuthError, calendar_service
+from friday.skills.base import skill
 
 
 def _event_summary(ev: dict) -> dict:
@@ -94,7 +94,7 @@ def list_events(start: str = "", end: str = "", days: int = 0, calendar_id: str 
     description=(
         "Create a Google Calendar event (without a video link — use create_meeting for "
         "one with Google Meet or Zoom). Times are ISO 8601; if no timezone offset is "
-        "given, the configured OC_TIMEZONE is assumed."
+        "given, the configured FRIDAY_TIMEZONE is assumed."
     ),
     input_schema={
         "type": "object",

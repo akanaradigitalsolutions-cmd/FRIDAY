@@ -3,7 +3,7 @@
 The `claude` CLI spawns this as a subprocess (see the --mcp-config built in
 core/llm.py) whenever the assistant handles a request headlessly.
 
-Run directly with `python -m obsidian_copilot.mcp_server` for manual testing.
+Run directly with `python -m friday.mcp_server` for manual testing.
 """
 
 from __future__ import annotations
@@ -15,10 +15,10 @@ import mcp.server.stdio
 import mcp.types as types
 from mcp.server import Server
 
-import obsidian_copilot.skills  # noqa: F401 - imported for its registration side effects
-from obsidian_copilot.skills import base as skills
+import friday.skills  # noqa: F401 - imported for its registration side effects
+from friday.skills import base as skills
 
-server = Server("copilot")
+server = Server("friday")
 
 
 @server.list_tools()

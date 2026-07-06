@@ -15,10 +15,10 @@ from __future__ import annotations
 import uuid
 from datetime import datetime, timedelta
 
-from obsidian_copilot.core.config import settings
-from obsidian_copilot.integrations.google_auth import GoogleAuthError, calendar_service
-from obsidian_copilot.integrations import zoom_auth
-from obsidian_copilot.skills.base import skill
+from friday.core.config import settings
+from friday.integrations.google_auth import GoogleAuthError, calendar_service
+from friday.integrations import zoom_auth
+from friday.skills.base import skill
 
 
 def _default_end(start: str, duration_minutes: int) -> str:

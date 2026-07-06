@@ -16,7 +16,7 @@ from datetime import date as date_cls
 from datetime import datetime
 from pathlib import Path
 
-from obsidian_copilot.core import config
+from friday.core import config
 
 
 class VaultPathError(ValueError):
@@ -63,7 +63,7 @@ def _daily_note_path(day: str | None) -> Path:
 # --------------------------------------------------------------------------- #
 # Skill functions (registered with the MCP registry at import time)
 # --------------------------------------------------------------------------- #
-from obsidian_copilot.skills.base import skill  # noqa: E402
+from friday.skills.base import skill  # noqa: E402
 
 
 @skill(
